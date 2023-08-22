@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+/**
+ * Main - Calculating the area of a rectangle
+ * rectangle_area - This function calculates the area of a rectangle.
+ * @l: This is the length of the rectangle.
+ * @w: This is the width of the rectangle.
+ *
+ * Return: Area of the rectangle.
+ */
+
+double rectangle_area(double l, double w)
+{
+	return l * w;
+}
+
+int main(void)
+{
+	double l, width;
+
+	printf("Insert the length of the rectangle: ");
+	scanf("%lf", &l);
+
+	printf("Insert the width of the rectangle: ");
+	scanf("%lf", &width);
+
+	if (l <= 0 || width <= 0)
+	{
+		printf("Invalid dimensions.\n");
+		return (1); /* Escape error code */
+	}
+	double area = rectangle_area(l, width);
+	printf("The area of the rectangle is: %.2lf\n", area);
+
+	return (0); /* Success escape code */
+}
