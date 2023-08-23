@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+/**
+ * main -displays a prompt for user
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    char *argv[] = {"/bin/ls", "$ ", "/usr/", NULL};
+
+    printf("$ \n");
+    if (execve(argv[0], argv, NULL) == -1)
+    {
+        perror("Error:");
+    }
+    printf("/usr/\n");
+    return (0);
+}
