@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int main()
+{
+ size_t x = 15;
+
+ char *buffer = malloc(sizeof(char) * x);
+
+ printf("$ ");
+ getline (&buffer, &x, stdin);
+
+ printf("%s", buffer);
+
+ free(buffer);
+
+ return (0);
+}
